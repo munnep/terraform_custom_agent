@@ -1,8 +1,9 @@
 #!/bin/bash
 echo "--------------------- Running Terraform Pre Plan Hook ----------------------"
-
-# Appends to the existing terraformrc file
 # Hooks are run from the /home/tfc-agent/.tfc-agent/component/terraform/runs/run-<random>/config
+
+# example for mirroring used
+# Appends to the existing terraformrc file
 # /home/tfc-agent/.tfc-agent/component/terraform/runs/run-<random>/.terraformrc
 # new line is required to not collide with existing contents of the file
 
@@ -14,6 +15,33 @@ echo "--------------------- Running Terraform Pre Plan Hook --------------------
 #   }
 # }
 
-# EOF
+echo "the Home directory being used"
+echo $HOME
+echo ""
+
+echo "verify the files in the home directory"
+ls -al $HOME
+echo ""
+
+
+echo "Show the current directory you are in"
+pwd
+echo ""
+
+
+echo "Show the current user"
+id
+echo ""
+
+echo "write a file as a test"
+cat > /home/tfc-agent/test.txt <<EOF
+this is just a test
+EOF
+echo ""
+
+
+echo "show the file"
+cat /home/tfc-agent/test.txt
+echo ""
 
 echo "-------------------- Finished Terraform Pre Plan Hook ----------------------"
