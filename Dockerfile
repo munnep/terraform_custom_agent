@@ -1,11 +1,11 @@
-FROM hashicorp/tfc-agent:1.12.0
+FROM hashicorp/tfc-agent:latest
 
 USER root
 RUN mkdir -p /home/tfc-agent/.tfc-agent
 ADD --chown=tfc-agent:tfc-agent hooks /home/tfc-agent/.tfc-agent/hooks
 
-
-COPY /var/tmp/proxy.pem /usr/local/share/ca-certificates/proxy.crt
+# Add your own certificates to the environment
+COPY proxy.pem /usr/local/share/ca-certificates/proxy.crt
 RUN update-ca-certificates
 
 
