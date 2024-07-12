@@ -44,5 +44,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ github.sha }}
+          tags: patrickmunne/custom-agent:${{ github.sha }}
+        #   tags: ${{ github.sha }}
         #   labels: ${{ github.sha }}
