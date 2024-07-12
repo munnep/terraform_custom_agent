@@ -45,4 +45,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ github.sha }}
-          labels: ${{ github.sha }}
+        #   labels: ${{ github.sha }}
