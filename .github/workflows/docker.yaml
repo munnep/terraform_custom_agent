@@ -34,6 +34,9 @@ jobs:
         with:
           images: patrickmunne/custom-agent
 
+      - name: echo sha
+        run: echo ${{ github.sha }}
+
       - name: Build and push Docker image
         id: push
         uses: docker/build-push-action@v6
@@ -42,4 +45,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ github.sha }}
- #         labels: ${{ steps.meta.outputs.labels }}
+          labels: ${{ github.sha }}
