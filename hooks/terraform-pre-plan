@@ -19,29 +19,6 @@ echo "--------------------- Running Terraform Pre Plan Hook --------------------
 # echo $HOME
 # echo ""
 # 
-# echo "verify the files in the home directory"
-# ls -al $HOME
-# echo ""
-# 
-# 
-# echo "Show the current directory you are in"
-# pwd
-# echo ""
-# 
-# 
-# echo "Show the current user"
-# id
-# echo ""
-# 
-# echo "write a file as a test"
-# cat > /home/tfc-agent/test.txt <<EOF
-# this is just a test
-# EOF
-# echo ""
-# 
-# 
-# echo "show the file"
-# cat /home/tfc-agent/test.txt
-# echo ""
+
 
 echo "-------------------- Finished Terraform Pre Plan Hook ----------------------"
