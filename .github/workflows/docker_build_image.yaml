@@ -3,7 +3,7 @@ name: Publish Docker image
 # on:
 #   release:
 #     types: [published]
-# 
+#  
 
 on:
   push:
@@ -45,7 +45,7 @@ jobs:
           images: ${{ env.REPOSITORY_NAME  }}
 
       - name: echo sha
-        run: echo ${{ github.ref }}
+        run: echo ${{ github.ref_name }}
 
       - name: Build and push Docker image
         id: push
@@ -54,6 +54,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: patrickmunne/custom-agent:${{ github.ref }}
+          tags: patrickmunne/custom-agent:${{ github.ref_name }}
         #   tags: ${{ github.sha }}
         #   labels: ${{ github.sha }}
