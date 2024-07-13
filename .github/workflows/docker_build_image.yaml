@@ -54,6 +54,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: patrickmunne/custom-agent:${{ github.ref_name }}
+          tags: ${{ env.REPOSITORY_NAME }}:${{ github.ref_name }}, ${{ env.REPOSITORY_NAME }}:latest
         #   tags: ${{ github.sha }}
         #   labels: ${{ github.sha }}
