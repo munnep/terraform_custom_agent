@@ -32,6 +32,9 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
+      - name: Make sure the hook files are executable
+        run: chmod +x hooks/   
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
