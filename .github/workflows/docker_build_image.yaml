@@ -7,6 +7,9 @@ name: Publish Docker image
 
 on: workflow_dispatch
 
+env:
+  REPOSITORY_NAME: "patrickmunne/custom-agent"
+
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
@@ -32,7 +35,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: patrickmunne/custom-agent
+          images: ${{ env.REPOSITORY_NAME  }}
 
       - name: echo sha
         run: echo ${{ github.sha }}
