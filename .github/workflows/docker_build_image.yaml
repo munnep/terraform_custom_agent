@@ -13,7 +13,7 @@ on:
     # Sequence of patterns matched against refs/tags
     tags:        
       - v*.*
-
+ 
 env:
   REPOSITORY_NAME: "patrickmunne/custom-agent"
 
