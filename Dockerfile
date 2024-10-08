@@ -3,8 +3,8 @@ FROM hashicorp/tfc-agent:latest
 USER root
 
 # Example: Add your own certificates to the environment
-# COPY proxy.pem /usr/local/share/ca-certificates/proxy.crt
-# RUN update-ca-certificates
+COPY proxy.pem /usr/local/share/ca-certificates/proxy.crt
+RUN update-ca-certificates
 
 # install the AWS cli binary on the agent
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
