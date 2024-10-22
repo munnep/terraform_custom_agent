@@ -16,4 +16,7 @@ echo "--------------------- Running Terraform Pre Apply Hook -------------------
 
 # EOF
 
+env
+
+
 echo "-------------------- Finished Terraform Pre Apply Hook ----------------------"
