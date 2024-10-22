@@ -16,8 +16,10 @@ echo "--------------------- Running Terraform Pre Apply Hook -------------------
 
 # EOF
 
-env
+env | grep CLOUDSDK_CORE_REQUEST_REASON
 
 export CLOUDSDK_CORE_REQUEST_REASON=$TFE_RUN_ID
+
+env | grep CLOUDSDK_CORE_REQUEST_REASON
 
 echo "-------------------- Finished Terraform Pre Apply Hook ----------------------"
