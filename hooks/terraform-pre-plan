@@ -20,5 +20,7 @@ echo "--------------------- Running Terraform Pre Plan Hook --------------------
 # echo ""
 # 
 
+env
+
 
 echo "-------------------- Finished Terraform Pre Plan Hook ----------------------"
