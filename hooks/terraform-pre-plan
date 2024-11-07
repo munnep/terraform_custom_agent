@@ -20,7 +20,11 @@ echo "--------------------- Running Terraform Pre Plan Hook --------------------
 # echo ""
 # 
 
-env
+# env
 
+echo Export the value terraform version
+export TF_VAR_TERRAFORM_VERSION=$(CHECKPOINT_DISABLED=true terraform version 2> /dev/null | tr '[:upper:]' '[:lower:]' | head -n 1)
+
+Echo show the value terraform version
 
 echo "-------------------- Finished Terraform Pre Plan Hook ----------------------"
