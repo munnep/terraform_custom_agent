@@ -23,9 +23,9 @@ echo "--------------------- Running Terraform Pre Plan Hook --------------------
 # env
 
 echo Export the value terraform version
-echo TERRAFORM_VERSION=1.1.1 >> $TFC_AGENT_ENV
+echo TF_VAR_TERRAFORM_VERSION=1.1.1 >> $TFC_AGENT_ENV
 
 echo show the value terraform version
-echo $TERRAFORM_VERSION
+echo $TF_VAR_TERRAFORM_VERSION
 
 echo "-------------------- Finished Terraform Pre Plan Hook ----------------------"
