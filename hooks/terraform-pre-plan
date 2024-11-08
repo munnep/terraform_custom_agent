@@ -7,13 +7,23 @@ echo "--------------------- Running Terraform Pre Plan Hook --------------------
 # /home/tfc-agent/.tfc-agent/component/terraform/runs/run-<random>/.terraformrc
 # new line is required to not collide with existing contents of the file
 
-# grep network_mirror "../.terraformrc" &>/dev/null || cat >> "../.terraformrc" << EOF
+cat >> "../.terraformrc" << EOF
 
-# provider_installation {
-#   network_mirror {
-#     url = "https://tfe3-client.aws.munnep.com/"
-#   }
-# }
+disable_checkpoint = true
+provider_installation {
+ direct {
+        include = [
+            "tfe38.aws.munnep.com/*/*", # for self developed private providers
+          	"registry.terraform2.io/hashicorp/*",
+			"registry.terraform.io/integrations/github",
+			"registry.terraform.io/azure/azapi",
+			"registry.terraform.io/microsoft/azuredevops",
+			"registry.terraform.io/dynatrace-oss/dynatrace",
+			"registry.terraform.io/Snowflake-Labs/snowflake",
+        ]
+    }
+}
+EOF
 
 # echo "the Home directory being used"
 # echo $HOME
@@ -22,10 +32,6 @@ echo "--------------------- Running Terraform Pre Plan Hook --------------------
 
 # env
 
-echo Export the value terraform version
-echo TF_VAR_TERRAFORM_VERSION=1.1.1 >> $TFC_AGENT_ENV
-
-echo show the value terraform version
-echo $TF_VAR_TERRAFORM_VERSION
+cat ../.terraformrc
 
 echo "-------------------- Finished Terraform Pre Plan Hook ----------------------"
