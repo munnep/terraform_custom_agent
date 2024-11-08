@@ -7,23 +7,26 @@ echo "--------------------- Running Terraform Pre Plan Hook --------------------
 # /home/tfc-agent/.tfc-agent/component/terraform/runs/run-<random>/.terraformrc
 # new line is required to not collide with existing contents of the file
 
-cat >> "../.terraformrc" << EOF
 
-disable_checkpoint = true
-provider_installation {
- direct {
-        include = [
-            "tfe38.aws.munnep.com/*/*", # for self developed private providers
-          	"registry.terraform2.io/hashicorp/*",
-			"registry.terraform.io/integrations/github",
-			"registry.terraform.io/azure/azapi",
-			"registry.terraform.io/microsoft/azuredevops",
-			"registry.terraform.io/dynatrace-oss/dynatrace",
-			"registry.terraform.io/Snowflake-Labs/snowflake",
-        ]
-    }
-}
-EOF
+
+# only allow providers to be downloaded from the following locations
+# cat >> "../.terraformrc" << EOF
+# 
+# disable_checkpoint = true
+# provider_installation {
+#  direct {
+#         include = [
+#             "tfe38.aws.munnep.com/*/*", # for self developed private providers
+#            	"registry.terraform.io/hashicorp/*",
+# 			"registry.terraform.io/integrations/github",
+# 			"registry.terraform.io/azure/azapi",
+# 			"registry.terraform.io/microsoft/azuredevops",
+# 			"registry.terraform.io/dynatrace-oss/dynatrace",
+# 			"registry.terraform.io/Snowflake-Labs/snowflake",
+#         ]
+#     }
+# }
+# EOF
 
 # echo "the Home directory being used"
 # echo $HOME
@@ -32,6 +35,6 @@ EOF
 
 # env
 
-cat ../.terraformrc
+# cat ../.terraformrc
 
 echo "-------------------- Finished Terraform Pre Plan Hook ----------------------"
