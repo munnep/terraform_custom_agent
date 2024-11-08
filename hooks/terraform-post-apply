@@ -16,6 +16,4 @@ echo "--------------------- Running Terraform Post Apply Hook ------------------
 
 # EOF
 
-env | grep CLOUDSDK_CORE_REQUEST_REASON
-
 echo "-------------------- Finished Terraform Post Apply Hook ----------------------"
