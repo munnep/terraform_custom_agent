@@ -33,7 +33,7 @@ echo "--------------------- Running Terraform Pre Plan Hook --------------------
 # echo ""
 # 
 
-# env
+env
 
 # cat ../.terraformrc
 
