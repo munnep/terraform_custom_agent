@@ -33,9 +33,15 @@ echo "--------------------- Running Terraform Pre Plan Hook --------------------
 # echo ""
 # 
 
-# Fill the ARTIFACTORY_TOKEN variable with the content of the secret
+echo "PRINT SECRET"
+cat /home/tfc-agent/secret-volume/TOKEN_PATRICK
 
+# Fill the ARTIFACTORY_TOKEN variable with the content of the secret
+echo "fill ARTIFACTORY_TOKEN"
 ARTIFACTORY_TOKEN=$(cat /home/tfc-agent/secret-volume/TOKEN_PATRICK)
+
+echo "show the token"
+echo $ARTIFACTORY_TOKEN
 
 env
 
