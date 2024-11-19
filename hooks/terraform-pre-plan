@@ -35,6 +35,12 @@ echo "--------------------- Running Terraform Pre Plan Hook --------------------
 
 env
 
+echo "LIST THE SECRET"
+ls -al /home/tfc-agent/secret-volume
+
+echo "SEE THE SECRET"
+cat /home/tfc-agent/secret-volume/TOKEN_PATRICK
+
 # cat ../.terraformrc
 
 echo "-------------------- Finished Terraform Pre Plan Hook ----------------------"
