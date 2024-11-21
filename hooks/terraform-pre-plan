@@ -36,7 +36,7 @@ echo "--------------------- Running Terraform Pre Plan Hook --------------------
 # env
 
 echo ##########################################
-echo "Print the /etc/hosts file
+echo "Print the /etc/hosts file"
 echo ##########################################
 cat /etc/hosts
 
