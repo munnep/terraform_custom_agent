@@ -1,1 +1,6 @@
-fff
+#!/bin/bash
+echo "--------------------- Running Terraform Post Plan Hook ----------------------"
+# Hooks are run from the /home/tfc-agent/.tfc-agent/component/terraform/runs/run-<random>/config
+
+
+echo "-------------------- Finished Terraform Post Plan Hook ----------------------"
