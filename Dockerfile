@@ -18,5 +18,6 @@ RUN apt-get clean && \
 
 RUN mkdir -p /home/tfc-agent/.tfc-agent
 ADD --chown=tfc-agent:tfc-agent hooks /home/tfc-agent/.tfc-agent/hooks
+RUN chmod +x /home/tfc-agent/.tfc-agent/hooks/*
 USER tfc-agent
  
