@@ -1,7 +1,10 @@
 # FROM hashicorp/tfc-agent:latest
-FROM hashicorp/tfc-agent:1.17.2
+FROM hashicorp/tfc-agent:1.22.2
 
 USER root
+
+# To disable the automatic update of the tfc-agent binary
+# ENV TFC_AGENT_AUTO_UPDATE=disabled
 
 # Example: Add your own certificates to the environment
 COPY proxy.pem /usr/local/share/ca-certificates/proxy.crt
