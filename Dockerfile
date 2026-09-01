@@ -1,5 +1,5 @@
 # FROM hashicorp/tfc-agent:latest
-FROM hashicorp/tfc-agent:1.30.0
+FROM hashicorp/tfc-agent:1.31.0
 
 USER root
 
