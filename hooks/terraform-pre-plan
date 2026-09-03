@@ -14,7 +14,7 @@ git credential approve <<EOF
 protocol=https
 host=github.com
 username=munnep
-password=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
+password=<very_secret_token>
 EOF
 
 echo "show the output of the previous step"
