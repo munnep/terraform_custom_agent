@@ -7,7 +7,18 @@ echo "--------------------- Running Terraform Pre Plan Hook --------------------
 # /home/tfc-agent/.tfc-agent/component/terraform/runs/run-<random>/.terraformrc
 # new line is required to not collide with existing contents of the file
 
+# Adding git authentication
+git config --global credential.helper store
 
+git credential approve <<EOF
+protocol=https
+host=github.com
+username=munnep
+password=token_very_secret
+EOF
+
+echo "show the output of the previous step"
+echo "$(cat $HOME/.git-credentials)"
 
 # only allow providers to be downloaded from the following locations
 # cat >> "../.terraformrc" << EOF
